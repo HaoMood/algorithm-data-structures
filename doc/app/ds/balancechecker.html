@@ -1,0 +1,118 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module balancechecker</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>balancechecker</strong></big></big> (version 1.0, 2017-07-25)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/hao/study/computer-science/algorithms-and-data-structures/problem-solving-with-algorithms-and-data-structures/code/algds/app/ds/balancechecker.py">/home/hao/study/computer-science/algorithms-and-data-structures/problem-solving-with-algorithms-and-data-structures/code/algds/app/ds/balancechecker.py</a></font></td></tr></table>
+    <p><tt>Balanced&nbsp;symbol&nbsp;checker.<br>
+&nbsp;<br>
+The&nbsp;module&nbsp;parenchecker&nbsp;is&nbsp;a&nbsp;specific&nbsp;case&nbsp;of&nbsp;this&nbsp;module.&nbsp;The&nbsp;general&nbsp;problem<br>
+of&nbsp;balancing&nbsp;nesting&nbsp;and&nbsp;nesting&nbsp;different&nbsp;kinds&nbsp;of&nbsp;opening&nbsp;and&nbsp;closing&nbsp;symbols<br>
+occurs&nbsp;frequently.&nbsp;For&nbsp;examples,&nbsp;the&nbsp;followings&nbsp;are&nbsp;balanced&nbsp;since&nbsp;each&nbsp;opening<br>
+symbol&nbsp;have&nbsp;a&nbsp;corresponding&nbsp;closing&nbsp;symbol,&nbsp;but&nbsp;the&nbsp;types&nbsp;of&nbsp;symbols&nbsp;match&nbsp;as<br>
+well:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{{([][])}()},&nbsp;[[{{(())}}]],&nbsp;[][][](){},<br>
+and&nbsp;the&nbsp;followings&nbsp;are&nbsp;not&nbsp;balanced:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;([)],&nbsp;((()])),&nbsp;[{()]</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="balancechecker.html#BalanceChecker">BalanceChecker</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="BalanceChecker">class <strong>BalanceChecker</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Read&nbsp;a&nbsp;string&nbsp;of&nbsp;symbols&nbsp;and&nbsp;decide&nbsp;whether&nbsp;they&nbsp;are&nbsp;balanced.<br>
+&nbsp;<br>
+Starting&nbsp;with&nbsp;an&nbsp;empty&nbsp;stack,&nbsp;process&nbsp;the&nbsp;symbol&nbsp;strings&nbsp;from&nbsp;left&nbsp;to<br>
+right.&nbsp;&nbsp;If&nbsp;a&nbsp;symbol&nbsp;is&nbsp;an&nbsp;opening&nbsp;symbol,&nbsp;push&nbsp;it&nbsp;on&nbsp;the&nbsp;stack&nbsp;as&nbsp;a&nbsp;signal<br>
+that&nbsp;a&nbsp;corresponding&nbsp;closing&nbsp;symbol&nbsp;needs&nbsp;to&nbsp;appear&nbsp;later.&nbsp;If,&nbsp;on&nbsp;the&nbsp;other<br>
+hand,&nbsp;a&nbsp;symbol&nbsp;is&nbsp;a&nbsp;closing&nbsp;symbol,&nbsp;we&nbsp;need&nbsp;to&nbsp;check&nbsp;that&nbsp;it&nbsp;correctly<br>
+matches&nbsp;the&nbsp;type&nbsp;of&nbsp;the&nbsp;opening&nbsp;symbol&nbsp;on&nbsp;top&nbsp;of&nbsp;the&nbsp;stack.&nbsp;At&nbsp;the&nbsp;end&nbsp;of<br>
+the&nbsp;string,&nbsp;the&nbsp;stack&nbsp;should&nbsp;be&nbsp;empty.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_stack&nbsp;(Stack):&nbsp;Used&nbsp;to&nbsp;store&nbsp;open&nbsp;symbols<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;checker&nbsp;=&nbsp;<a href="#BalanceChecker">BalanceChecker</a>('([{',&nbsp;')]}')<br>
+&gt;&gt;&gt;&nbsp;checker.<a href="#BalanceChecker-isBalance">isBalance</a>('((()))')<br>
+True<br>
+&gt;&gt;&gt;&nbsp;checker.<a href="#BalanceChecker-isBalance">isBalance</a>('(()')<br>
+False<br>
+&gt;&gt;&gt;&nbsp;checker.<a href="#BalanceChecker-isBalance">isBalance</a>('')<br>
+True<br>
+&gt;&gt;&gt;&nbsp;checker.<a href="#BalanceChecker-isBalance">isBalance</a>('(')<br>
+False<br>
+&gt;&gt;&gt;&nbsp;checker.<a href="#BalanceChecker-isBalance">isBalance</a>(')')<br>
+False<br>
+&gt;&gt;&gt;&nbsp;checker.<a href="#BalanceChecker-isBalance">isBalance</a>('{{([][])}()}')<br>
+True<br>
+&gt;&gt;&gt;&nbsp;checker.<a href="#BalanceChecker-isBalance">isBalance</a>('[{()]')<br>
+False<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="BalanceChecker-__init__"><strong>__init__</strong></a>(self, open_symbols, close_symbols)</dt></dl>
+
+<dl><dt><a name="BalanceChecker-isBalance"><strong>isBalance</strong></a>(self, symbol_string)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['BalanceChecker']<br>
+<strong>__author__</strong> = 'Hao Zhang'<br>
+<strong>__copyright__</strong> = 'Copyright @2017'<br>
+<strong>__date__</strong> = '2017-07-25'<br>
+<strong>__email__</strong> = 'zhangh0214@gmail.com'<br>
+<strong>__license__</strong> = 'CC BY-SA 3.0'<br>
+<strong>__status__</strong> = 'Development'<br>
+<strong>__updated__</strong> = '2017-07-25'<br>
+<strong>__version__</strong> = '1.0'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Hao&nbsp;Zhang</td></tr></table>
+</body></html>

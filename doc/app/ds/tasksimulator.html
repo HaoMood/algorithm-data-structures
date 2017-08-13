@@ -1,0 +1,113 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module tasksimulator</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>tasksimulator</strong></big></big> (version 1.0, 2017-07-26)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/hao/study/computer-science/algorithms-and-data-structures/problem-solving-with-algorithms-and-data-structures/code/algds/app/ds/tasksimulator.py">/home/hao/study/computer-science/algorithms-and-data-structures/problem-solving-with-algorithms-and-data-structures/code/algds/app/ds/tasksimulator.py</a></font></td></tr></table>
+    <p><tt><a href="#Simulation">Simulation</a>&nbsp;of&nbsp;printing&nbsp;tasks.<br>
+&nbsp;<br>
+Students&nbsp;send&nbsp;printing&nbsp;tasks&nbsp;to&nbsp;the&nbsp;shared&nbsp;printer,&nbsp;the&nbsp;tasks&nbsp;are&nbsp;placed&nbsp;in&nbsp;a<br>
+queue.&nbsp;We&nbsp;are&nbsp;concerned&nbsp;about&nbsp;whether&nbsp;the&nbsp;printer&nbsp;is&nbsp;capable&nbsp;of&nbsp;handling&nbsp;a<br>
+certain&nbsp;amount&nbsp;of&nbsp;work.&nbsp;That&nbsp;is&nbsp;to&nbsp;say,&nbsp;the&nbsp;average&nbsp;amount&nbsp;of&nbsp;time&nbsp;students<br>
+will&nbsp;wait&nbsp;for&nbsp;their&nbsp;papers&nbsp;to&nbsp;be&nbsp;printed.<br>
+&nbsp;<br>
+Say&nbsp;on&nbsp;any&nbsp;average&nbsp;data&nbsp;about&nbsp;10&nbsp;students&nbsp;are&nbsp;working&nbsp;in&nbsp;the&nbsp;lab&nbsp;at&nbsp;any&nbsp;given<br>
+hour.&nbsp;These&nbsp;students&nbsp;typically&nbsp;print&nbsp;twice&nbsp;during&nbsp;that&nbsp;time,&nbsp;and&nbsp;length&nbsp;of<br>
+these&nbsp;tasks&nbsp;ranges&nbsp;from&nbsp;1&nbsp;to&nbsp;20&nbsp;pages&nbsp;uniformly.&nbsp;The&nbsp;chance&nbsp;that&nbsp;at&nbsp;any&nbsp;given<br>
+second,&nbsp;a&nbsp;print&nbsp;task&nbsp;is&nbsp;going&nbsp;to&nbsp;be&nbsp;created&nbsp;is&nbsp;20&nbsp;tasks/hour&nbsp;=&nbsp;1/180<br>
+task/second.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="random.html">random</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="tasksimulator.html#Simulation">Simulation</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Simulation">class <strong>Simulation</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Simulation">Simulation</a>&nbsp;of&nbsp;a&nbsp;lab&nbsp;with&nbsp;one&nbsp;printer&nbsp;and&nbsp;multiple&nbsp;users.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_printer&nbsp;(_Printer):&nbsp;A&nbsp;_Printer&nbsp;which&nbsp;can&nbsp;handle&nbsp;printing&nbsp;tasks.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_task_queue&nbsp;(Queue):&nbsp;_Task&nbsp;instances&nbsp;wait&nbsp;to&nbsp;be&nbsp;processed.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_waiting_times&nbsp;(list&nbsp;of&nbsp;int/float):&nbsp;Waiting&nbsp;time&nbsp;for&nbsp;each&nbsp;task.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Simulation-__init__"><strong>__init__</strong></a>(self, printer_page_rate<font color="#909090">=10</font>, task_rate<font color="#909090">=20</font>)</dt><dd><tt>Initialize&nbsp;the&nbsp;printer&nbsp;and&nbsp;task&nbsp;queue.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printer_page_rate&nbsp;(int/float)&nbsp;[10]:&nbsp;Number&nbsp;pages&nbsp;per&nbsp;minute&nbsp;a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printer&nbsp;is&nbsp;capable.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;task_rate&nbsp;(int/float)&nbsp;[20]:&nbsp;Number&nbsp;tasks&nbsp;per&nbsp;hour&nbsp;is&nbsp;generated.</tt></dd></dl>
+
+<dl><dt><a name="Simulation-run"><strong>run</strong></a>(self, num_seconds<font color="#909090">=3600</font>)</dt><dd><tt>Run&nbsp;the&nbsp;simulation.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;num_seconds&nbsp;(int)&nbsp;[3600]:&nbsp;Total&nbsp;number&nbsp;of&nbsp;seconds&nbsp;to&nbsp;run&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;simulation.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;if&nbsp;num_seconds&nbsp;is&nbsp;not&nbsp;valid.</tt></dd></dl>
+
+<dl><dt><a name="Simulation-statInfo"><strong>statInfo</strong></a>(self)</dt><dd><tt>Print&nbsp;statistic&nbsp;information&nbsp;of&nbsp;the&nbsp;simulation.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['Simulation']<br>
+<strong>__author__</strong> = 'Hao Zhang'<br>
+<strong>__copyright__</strong> = 'Copyright @2017'<br>
+<strong>__date__</strong> = '2017-07-26'<br>
+<strong>__email__</strong> = 'zhangh0214@gmail.com'<br>
+<strong>__license__</strong> = 'CC BY-SA 3.0'<br>
+<strong>__status__</strong> = 'Development'<br>
+<strong>__updated__</strong> = '2017-07-26'<br>
+<strong>__version__</strong> = '1.0'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Hao&nbsp;Zhang</td></tr></table>
+</body></html>

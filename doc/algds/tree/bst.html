@@ -1,0 +1,101 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module bst</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>bst</strong></big></big> (version 1.0, 2017-08-12)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/hao/study/computer-science/algorithms-and-data-structures/problem-solving-with-algorithms-and-data-structures-with-python/code/algds/algds/tree/bst.py">/home/hao/study/computer-science/algorithms-and-data-structures/problem-solving-with-algorithms-and-data-structures-with-python/code/algds/algds/tree/bst.py</a></font></td></tr></table>
+    <p><tt>The&nbsp;implementation&nbsp;of&nbsp;a&nbsp;binary&nbsp;search&nbsp;tree.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="bst.html#BST">BST</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="BST">class <strong>BST</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Implementation&nbsp;of&nbsp;a&nbsp;binary&nbsp;search&nbsp;tree.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;bst&nbsp;=&nbsp;<a href="#BST">BST</a>()<br>
+&gt;&gt;&gt;&nbsp;bst[3]&nbsp;=&nbsp;'red'<br>
+&gt;&gt;&gt;&nbsp;bst[4]&nbsp;=&nbsp;'blue'<br>
+&gt;&gt;&gt;&nbsp;bst[6]&nbsp;=&nbsp;'yellow'<br>
+&gt;&gt;&gt;&nbsp;bst[2]&nbsp;=&nbsp;'at'<br>
+&gt;&gt;&gt;&nbsp;print(bst[6])<br>
+yellow<br>
+&gt;&gt;&gt;&nbsp;print(bst[2])<br>
+at<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="BST-__contains__"><strong>__contains__</strong></a>(self, key)</dt><dd><tt>Implement&nbsp;the&nbsp;in&nbsp;operator.</tt></dd></dl>
+
+<dl><dt><a name="BST-__delitem__"><strong>__delitem__</strong></a>(self, key)</dt><dd><tt>Delete&nbsp;the&nbsp;node&nbsp;by&nbsp;searching&nbsp;the&nbsp;tree.</tt></dd></dl>
+
+<dl><dt><a name="BST-__getitem__"><strong>__getitem__</strong></a>(self, key)</dt><dd><tt>It&nbsp;uses&nbsp;the&nbsp;same&nbsp;logic&nbsp;for&nbsp;choosing&nbsp;the&nbsp;left&nbsp;and&nbsp;right&nbsp;child&nbsp;as&nbsp;the<br>
+__setitem__&nbsp;method.<br>
+&nbsp;<br>
+By&nbsp;overloading&nbsp;[],&nbsp;we&nbsp;can&nbsp;write&nbsp;a&nbsp;Python&nbsp;statement&nbsp;that&nbsp;looks&nbsp;just&nbsp;like<br>
+we&nbsp;are&nbsp;accessing&nbsp;a&nbsp;dictionary:&nbsp;z&nbsp;=&nbsp;bst['Fargo'].</tt></dd></dl>
+
+<dl><dt><a name="BST-__init__"><strong>__init__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="BST-__iter__"><strong>__iter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="BST-__len__"><strong>__len__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="BST-__setitem__"><strong>__setitem__</strong></a>(self, key, value)</dt><dd><tt>Overload&nbsp;the&nbsp;[]&nbsp;operator&nbsp;for&nbsp;assignment&nbsp;by&nbsp;having&nbsp;the&nbsp;__setitem__<br>
+method&nbsp;call.<br>
+&nbsp;<br>
+This&nbsp;allow&nbsp;us&nbsp;to&nbsp;write&nbsp;Python&nbsp;statements&nbsp;like&nbsp;bst['Plymouth']&nbsp;=&nbsp;55446.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['BST']<br>
+<strong>__author__</strong> = 'Hao Zhang'<br>
+<strong>__copyright__</strong> = 'Copyright @2017'<br>
+<strong>__date__</strong> = '2017-08-12'<br>
+<strong>__email__</strong> = 'zhangh0214@gmail.com'<br>
+<strong>__license__</strong> = 'CC BY-SA 3.0'<br>
+<strong>__status__</strong> = 'Development'<br>
+<strong>__updated__</strong> = '2017-08-12'<br>
+<strong>__version__</strong> = '1.0'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Hao&nbsp;Zhang</td></tr></table>
+</body></html>

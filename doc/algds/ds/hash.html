@@ -1,0 +1,123 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module hash</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>hash</strong></big></big> (version 1.0, 2017-07-28)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/hao/study/computer-science/algorithms-and-data-structures/problem-solving-with-algorithms-and-data-structures/code/algds/algds/ds/hash.py">/home/hao/study/computer-science/algorithms-and-data-structures/problem-solving-with-algorithms-and-data-structures/code/algds/algds/ds/hash.py</a></font></td></tr></table>
+    <p><tt>Implementation&nbsp;of&nbsp;hashing.<br>
+&nbsp;<br>
+Searching&nbsp;in&nbsp;a&nbsp;hash&nbsp;table&nbsp;can&nbsp;take&nbsp;O(1)&nbsp;time.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="hash.html#HashTable">HashTable</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="HashTable">class <strong>HashTable</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>We&nbsp;create&nbsp;a&nbsp;hash&nbsp;table&nbsp;by&nbsp;using&nbsp;a&nbsp;list.<br>
+&nbsp;<br>
+The&nbsp;collisions&nbsp;are&nbsp;resolved&nbsp;by&nbsp;open&nbsp;addressing,&nbsp;to&nbsp;be&nbsp;more&nbsp;precise,&nbsp;linear<br>
+probing.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_slots&nbsp;(list):&nbsp;Store&nbsp;the&nbsp;key-value&nbsp;pairs.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;h&nbsp;=&nbsp;<a href="#HashTable">HashTable</a>()<br>
+&gt;&gt;&gt;&nbsp;h[54]&nbsp;=&nbsp;'cat'<br>
+&gt;&gt;&gt;&nbsp;h[26]&nbsp;=&nbsp;'dog'<br>
+&gt;&gt;&gt;&nbsp;h[93]&nbsp;=&nbsp;'lion'<br>
+&gt;&gt;&gt;&nbsp;h[17]&nbsp;=&nbsp;'tiger'<br>
+&gt;&gt;&gt;&nbsp;h[77]&nbsp;=&nbsp;'bird'<br>
+&gt;&gt;&gt;&nbsp;h[31]&nbsp;=&nbsp;'cow'<br>
+&gt;&gt;&gt;&nbsp;h[44]&nbsp;=&nbsp;'goat'<br>
+&gt;&gt;&gt;&nbsp;h[25]&nbsp;=&nbsp;'pig'<br>
+&gt;&gt;&gt;&nbsp;h[20]&nbsp;=&nbsp;'chicken'<br>
+&gt;&gt;&gt;&nbsp;print(h[20])<br>
+chicken<br>
+&gt;&gt;&gt;&nbsp;print(h[17])<br>
+tiger<br>
+&gt;&gt;&gt;&nbsp;h[20]&nbsp;=&nbsp;'duck'<br>
+&gt;&gt;&gt;&nbsp;print(h[20])<br>
+duck<br>
+&gt;&gt;&gt;&nbsp;print(h[99])<br>
+None<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="HashTable-__contains__"><strong>__contains__</strong></a>(self, key)</dt><dd><tt>For&nbsp;the&nbsp;statement&nbsp;'key&nbsp;in&nbsp;d'.</tt></dd></dl>
+
+<dl><dt><a name="HashTable-__delitem__"><strong>__delitem__</strong></a>(self, key)</dt><dd><tt>Delete&nbsp;the&nbsp;key-value&nbsp;pair&nbsp;from&nbsp;the&nbsp;hash&nbsp;table&nbsp;using&nbsp;'del&nbsp;h[key]'.</tt></dd></dl>
+
+<dl><dt><a name="HashTable-__getitem__"><strong>__getitem__</strong></a>(self, key)</dt><dd><tt>Given&nbsp;a&nbsp;key.<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;value&nbsp;stored&nbsp;in&nbsp;the&nbsp;hash&nbsp;table&nbsp;or&nbsp;None&nbsp;otherwise.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;key&nbsp;(int/str)</tt></dd></dl>
+
+<dl><dt><a name="HashTable-__init__"><strong>__init__</strong></a>(self, number_slots<font color="#909090">=11</font>)</dt></dl>
+
+<dl><dt><a name="HashTable-__setitem__"><strong>__setitem__</strong></a>(self, key, val)</dt><dd><tt>Add&nbsp;a&nbsp;new&nbsp;key-value&nbsp;pair&nbsp;to&nbsp;the&nbsp;hash&nbsp;table.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;key&nbsp;is&nbsp;already&nbsp;in&nbsp;the&nbsp;map,&nbsp;then&nbsp;replace&nbsp;the&nbsp;old&nbsp;value&nbsp;with&nbsp;the<br>
+new&nbsp;one.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;key&nbsp;(int/str)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;val<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;RuntimeError:&nbsp;If&nbsp;the&nbsp;slots&nbsp;are&nbsp;out&nbsp;of&nbsp;storage.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['HashTable']<br>
+<strong>__author__</strong> = 'Hao Zhang'<br>
+<strong>__copyright__</strong> = 'Copyright @2017'<br>
+<strong>__date__</strong> = '2017-07-28'<br>
+<strong>__email__</strong> = 'zhangh0214@gmail.com'<br>
+<strong>__license__</strong> = 'CC BY-SA 3.0'<br>
+<strong>__status__</strong> = 'Development'<br>
+<strong>__updated__</strong> = '2017-07-28'<br>
+<strong>__version__</strong> = '1.0'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Hao&nbsp;Zhang</td></tr></table>
+</body></html>

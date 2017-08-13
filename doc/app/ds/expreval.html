@@ -1,0 +1,169 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module expreval</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>expreval</strong></big></big> (version 1.2, 2017-07-26)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/hao/study/computer-science/algorithms-and-data-structures/problem-solving-with-algorithms-and-data-structures/code/algds/app/ds/expreval.py">/home/hao/study/computer-science/algorithms-and-data-structures/problem-solving-with-algorithms-and-data-structures/code/algds/app/ds/expreval.py</a></font></td></tr></table>
+    <p><tt>Infix,&nbsp;prefix&nbsp;and&nbsp;postfix&nbsp;expressions.<br>
+&nbsp;<br>
+Computers&nbsp;need&nbsp;to&nbsp;know&nbsp;exactly&nbsp;what&nbsp;operators&nbsp;to&nbsp;perform&nbsp;and&nbsp;in&nbsp;what&nbsp;order.<br>
+One&nbsp;way&nbsp;to&nbsp;write&nbsp;an&nbsp;expression&nbsp;that&nbsp;guarantees&nbsp;there&nbsp;will&nbsp;be&nbsp;no&nbsp;confusion&nbsp;wrt<br>
+the&nbsp;order&nbsp;of&nbsp;operations&nbsp;is&nbsp;to&nbsp;create&nbsp;a&nbsp;fully&nbsp;parenthesized&nbsp;expression.&nbsp;This<br>
+type&nbsp;of&nbsp;expression&nbsp;uses&nbsp;one&nbsp;pair&nbsp;of&nbsp;parentheses&nbsp;for&nbsp;each&nbsp;operator.&nbsp;There&nbsp;is&nbsp;no<br>
+need&nbsp;to&nbsp;remember&nbsp;any&nbsp;precedence&nbsp;rules.<br>
+&nbsp;<br>
+Infix&nbsp;expression&nbsp;&nbsp;&nbsp;Prefix&nbsp;expression&nbsp;&nbsp;&nbsp;Postfix&nbsp;expression<br>
+A&nbsp;+&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;A&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;B&nbsp;+<br>
+(A&nbsp;+&nbsp;B)&nbsp;*&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;+&nbsp;A&nbsp;B&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;B&nbsp;+&nbsp;C&nbsp;*<br>
+&nbsp;<br>
+Operators&nbsp;are&nbsp;no&nbsp;longer&nbsp;ambiguous&nbsp;wrt&nbsp;the&nbsp;operands&nbsp;that&nbsp;they&nbsp;work&nbsp;on&nbsp;in&nbsp;prefix<br>
+and&nbsp;postfix.&nbsp;Only&nbsp;infix&nbsp;notation&nbsp;requires&nbsp;the&nbsp;additional&nbsp;symbols.&nbsp;The&nbsp;order&nbsp;of<br>
+operations&nbsp;within&nbsp;prefix&nbsp;and&nbsp;postfix&nbsp;expressions&nbsp;is&nbsp;completely&nbsp;determined&nbsp;by<br>
+the&nbsp;position&nbsp;of&nbsp;the&nbsp;operator&nbsp;and&nbsp;nothing&nbsp;else.&nbsp;In&nbsp;many&nbsp;ways,&nbsp;this&nbsp;makes&nbsp;infix<br>
+the&nbsp;least&nbsp;desirable&nbsp;notation&nbsp;to&nbsp;use.<br>
+&nbsp;<br>
+The&nbsp;position&nbsp;of&nbsp;the&nbsp;parenthesis&nbsp;pair&nbsp;in&nbsp;infix&nbsp;expressions&nbsp;are&nbsp;clues&nbsp;to<br>
+the&nbsp;final&nbsp;position&nbsp;of&nbsp;the&nbsp;enclosed&nbsp;operator.&nbsp;If&nbsp;the&nbsp;operator&nbsp;were<br>
+moved&nbsp;to&nbsp;its&nbsp;corresponding&nbsp;right&nbsp;parenthesis&nbsp;position&nbsp;and&nbsp;the&nbsp;matching<br>
+left&nbsp;parenthesis&nbsp;were&nbsp;removed,&nbsp;the&nbsp;postfix&nbsp;would&nbsp;result.&nbsp;If&nbsp;we&nbsp;do&nbsp;the<br>
+same&nbsp;thing&nbsp;but&nbsp;we&nbsp;move&nbsp;the&nbsp;operator&nbsp;to&nbsp;the&nbsp;left&nbsp;parenthesis&nbsp;instead,<br>
+the&nbsp;prefix&nbsp;would&nbsp;result.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="expreval.html#ExprEval">ExprEval</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ExprEval">class <strong>ExprEval</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Convert&nbsp;infix&nbsp;expression&nbsp;to&nbsp;postfix&nbsp;expression&nbsp;and&nbsp;evalutate&nbsp;the&nbsp;result.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_operators&nbsp;(set):&nbsp;Valid&nbsp;operators<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_prec&nbsp;(dict&nbsp;of&nbsp;(str,&nbsp;int)):&nbsp;Holds&nbsp;the&nbsp;precedence&nbsp;values&nbsp;for&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;operators.&nbsp;"("&nbsp;will&nbsp;receive&nbsp;the&nbsp;lowest&nbsp;value&nbsp;possible.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;expr_eval&nbsp;=&nbsp;<a href="#ExprEval">ExprEval</a>()<br>
+&gt;&gt;&gt;&nbsp;expr_eval.<a href="#ExprEval-infix2postfix">infix2postfix</a>('A&nbsp;*&nbsp;B&nbsp;+&nbsp;C&nbsp;*&nbsp;D')<br>
+'A&nbsp;B&nbsp;*&nbsp;C&nbsp;D&nbsp;*&nbsp;+'<br>
+&gt;&gt;&gt;&nbsp;expr_eval.<a href="#ExprEval-infix2postfix">infix2postfix</a>('(&nbsp;A&nbsp;+&nbsp;B&nbsp;)&nbsp;*&nbsp;(&nbsp;C&nbsp;+&nbsp;D&nbsp;)')<br>
+'A&nbsp;B&nbsp;+&nbsp;C&nbsp;D&nbsp;+&nbsp;*'<br>
+&gt;&gt;&gt;&nbsp;expr_eval.<a href="#ExprEval-infix2postfix">infix2postfix</a>('(&nbsp;A&nbsp;+&nbsp;B&nbsp;)&nbsp;*&nbsp;C')<br>
+'A&nbsp;B&nbsp;+&nbsp;C&nbsp;*'<br>
+&gt;&gt;&gt;&nbsp;expr_eval.<a href="#ExprEval-infix2postfix">infix2postfix</a>('A&nbsp;+&nbsp;B&nbsp;*&nbsp;C')<br>
+'A&nbsp;B&nbsp;C&nbsp;*&nbsp;+'<br>
+&gt;&gt;&gt;&nbsp;expr_eval.<a href="#ExprEval-infix2postfix">infix2postfix</a>('5&nbsp;*&nbsp;3&nbsp;**&nbsp;(&nbsp;4&nbsp;-&nbsp;2&nbsp;)')<br>
+'5&nbsp;3&nbsp;4&nbsp;2&nbsp;-&nbsp;**&nbsp;*'<br>
+&gt;&gt;&gt;&nbsp;expr_eval.<a href="#ExprEval-eval">eval</a>('4&nbsp;5&nbsp;6&nbsp;*&nbsp;+')<br>
+34.0<br>
+&gt;&gt;&gt;&nbsp;expr_eval.<a href="#ExprEval-eval">eval</a>('7&nbsp;8&nbsp;+&nbsp;3&nbsp;2&nbsp;+&nbsp;/')<br>
+3.0<br>
+&gt;&gt;&gt;&nbsp;expr_eval.<a href="#ExprEval-eval">eval</a>('5&nbsp;3&nbsp;4&nbsp;2&nbsp;-&nbsp;**&nbsp;*')<br>
+45.0<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="ExprEval-__init__"><strong>__init__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ExprEval-eval"><strong>eval</strong></a>(self, post_expr)</dt><dd><tt>Evaluate&nbsp;an&nbsp;postfix&nbsp;expression.<br>
+&nbsp;<br>
+Whenever&nbsp;an&nbsp;operator&nbsp;is&nbsp;seen&nbsp;on&nbsp;the&nbsp;input,&nbsp;the&nbsp;two&nbsp;most&nbsp;recent&nbsp;operands<br>
+will&nbsp;be&nbsp;used&nbsp;in&nbsp;the&nbsp;evaluation.&nbsp;So&nbsp;a&nbsp;stack&nbsp;is&nbsp;again&nbsp;the&nbsp;data&nbsp;structure<br>
+of&nbsp;choice.&nbsp;When&nbsp;the&nbsp;final&nbsp;operator&nbsp;is&nbsp;processed,&nbsp;there&nbsp;will&nbsp;be&nbsp;only&nbsp;one<br>
+value&nbsp;left&nbsp;on&nbsp;the&nbsp;stack.&nbsp;Pop&nbsp;and&nbsp;return&nbsp;it&nbsp;as&nbsp;the&nbsp;result&nbsp;of&nbsp;the<br>
+expression.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;post_expr&nbsp;(str):&nbsp;A&nbsp;postfix&nbsp;expression&nbsp;of&nbsp;tokens&nbsp;delimited&nbsp;by&nbsp;spaces.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;operators&nbsp;are&nbsp;*,&nbsp;/,&nbsp;+,&nbsp;and&nbsp;-,&nbsp;and&nbsp;the&nbsp;operands&nbsp;are&nbsp;assumed<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;be&nbsp;single-digit&nbsp;integer&nbsp;values.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(float):&nbsp;The&nbsp;evalutation&nbsp;result.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;If&nbsp;unknown&nbsp;character&nbsp;in&nbsp;post_expr&nbsp;is&nbsp;found.</tt></dd></dl>
+
+<dl><dt><a name="ExprEval-infix2postfix"><strong>infix2postfix</strong></a>(self, infix_expr)</dt><dd><tt>Convert&nbsp;any&nbsp;infix&nbsp;expression&nbsp;to&nbsp;a&nbsp;postfix&nbsp;expression.<br>
+&nbsp;<br>
+For&nbsp;example,&nbsp;A&nbsp;+&nbsp;B&nbsp;*&nbsp;C&nbsp;-&gt;&nbsp;A&nbsp;B&nbsp;C&nbsp;*&nbsp;+.&nbsp;The&nbsp;operands&nbsp;stay&nbsp;in&nbsp;their<br>
+relative&nbsp;positions.&nbsp;It&nbsp;is&nbsp;only&nbsp;the&nbsp;operators&nbsp;that&nbsp;change&nbsp;position.<br>
+The&nbsp;order&nbsp;of&nbsp;the&nbsp;operators&nbsp;in&nbsp;the&nbsp;original&nbsp;expression&nbsp;may&nbsp;be&nbsp;reversed<br>
+in&nbsp;the&nbsp;resulting&nbsp;postfix&nbsp;expression&nbsp;due&nbsp;to&nbsp;their&nbsp;precedence.<br>
+&nbsp;<br>
+Another&nbsp;example,&nbsp;(A&nbsp;+&nbsp;B)&nbsp;*&nbsp;C&nbsp;-&gt;&nbsp;A&nbsp;B&nbsp;+&nbsp;C&nbsp;*.&nbsp;When&nbsp;we&nbsp;see&nbsp;a&nbsp;left<br>
+parenthesis,&nbsp;we&nbsp;will&nbsp;save&nbsp;it&nbsp;to&nbsp;denote&nbsp;that&nbsp;another&nbsp;operator&nbsp;of&nbsp;high<br>
+precedence&nbsp;will&nbsp;be&nbsp;coming.&nbsp;When&nbsp;that&nbsp;right&nbsp;parenthesis&nbsp;does&nbsp;appear,<br>
+the&nbsp;operator&nbsp;can&nbsp;be&nbsp;popped&nbsp;from&nbsp;the&nbsp;stack.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;infix_expr&nbsp;(str):&nbsp;Infix&nbsp;expression&nbsp;where&nbsp;tokens&nbsp;are&nbsp;delimited&nbsp;by<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;spaces.&nbsp;The&nbsp;operator&nbsp;tokens&nbsp;are&nbsp;*,&nbsp;/,&nbsp;+,&nbsp;-,&nbsp;(,&nbsp;and&nbsp;).&nbsp;The<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;operand&nbsp;tokens&nbsp;are&nbsp;the&nbsp;single-character&nbsp;identifiers&nbsp;A,&nbsp;B,&nbsp;C,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;etc.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(str):&nbsp;Posfix&nbsp;expression.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;If&nbsp;unknown&nbsp;character&nbsp;in&nbsp;infix_expr&nbsp;is&nbsp;found.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['ExprEval']<br>
+<strong>__author__</strong> = 'Hao Zhang'<br>
+<strong>__copyright__</strong> = 'Copyright @2017'<br>
+<strong>__date__</strong> = '2017-07-26'<br>
+<strong>__email__</strong> = 'zhangh0214@gmail.com'<br>
+<strong>__license__</strong> = 'CC BY-SA 3.0'<br>
+<strong>__status__</strong> = 'Development'<br>
+<strong>__updated__</strong> = '2017-07-25'<br>
+<strong>__version__</strong> = '1.2'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Hao&nbsp;Zhang</td></tr></table>
+</body></html>

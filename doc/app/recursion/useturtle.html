@@ -1,0 +1,130 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module useturtle</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>useturtle</strong></big></big> (version 1.0, 2017-07-27)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/hao/study/computer-science/algorithms-and-data-structures/problem-solving-with-algorithms-and-data-structures/code/algds/app/recursion/useturtle.py">/home/hao/study/computer-science/algorithms-and-data-structures/problem-solving-with-algorithms-and-data-structures/code/algds/app/recursion/useturtle.py</a></font></td></tr></table>
+    <p><tt>Use&nbsp;turtle&nbsp;to&nbsp;see&nbsp;recursion.<br>
+&nbsp;<br>
+The&nbsp;turtle&nbsp;module&nbsp;is&nbsp;standard&nbsp;with&nbsp;all&nbsp;version&nbsp;of&nbsp;Python.&nbsp;You&nbsp;can&nbsp;create&nbsp;a<br>
+turtle&nbsp;and&nbsp;the&nbsp;turtle&nbsp;can&nbsp;move&nbsp;forward,&nbsp;backward,&nbsp;turn&nbsp;left.&nbsp;turn&nbsp;right,&nbsp;etc.<br>
+The&nbsp;turtle&nbsp;can&nbsp;have&nbsp;its&nbsp;tail&nbsp;up&nbsp;or&nbsp;down.&nbsp;When&nbsp;the&nbsp;turtle's&nbsp;tail&nbsp;is&nbsp;down&nbsp;and&nbsp;the<br>
+turtle&nbsp;moves&nbsp;it&nbsp;draws&nbsp;a&nbsp;line&nbsp;as&nbsp;it&nbsp;moves.&nbsp;You&nbsp;can&nbsp;also&nbsp;change&nbsp;the&nbsp;width&nbsp;of&nbsp;the<br>
+tail&nbsp;as&nbsp;well&nbsp;as&nbsp;the&nbsp;color&nbsp;of&nbsp;the&nbsp;ink&nbsp;the&nbsp;tail&nbsp;is&nbsp;dipped&nbsp;in.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="turtle.html">turtle</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="useturtle.html#Draw">Draw</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Draw">class <strong>Draw</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Use&nbsp;the&nbsp;turtle&nbsp;to&nbsp;draw&nbsp;shapes&nbsp;and&nbsp;figures.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;turtle&nbsp;(Turtle)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;screen&nbsp;(Screen):&nbsp;A&nbsp;window&nbsp;for&nbsp;the&nbsp;turtle&nbsp;to&nbsp;draw&nbsp;in.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Draw-__init__"><strong>__init__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Draw-drawFractalTree"><strong>drawFractalTree</strong></a>(self, branch_length<font color="#909090">=70</font>)</dt><dd><tt>Use&nbsp;the&nbsp;turtle&nbsp;to&nbsp;draw&nbsp;a&nbsp;fractal&nbsp;tree.<br>
+&nbsp;<br>
+The&nbsp;definition&nbsp;of&nbsp;a&nbsp;fractal&nbsp;is&nbsp;that&nbsp;when&nbsp;you&nbsp;look&nbsp;at&nbsp;in&nbsp;the&nbsp;fractal&nbsp;has<br>
+the&nbsp;same&nbsp;basic&nbsp;shape&nbsp;no&nbsp;matter&nbsp;how&nbsp;much&nbsp;you&nbsp;magnify&nbsp;it.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;branch_length&nbsp;(int&nbsp;&gt;=0)&nbsp;[70]:&nbsp;Line&nbsp;length&nbsp;for&nbsp;the&nbsp;first&nbsp;tree.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;if&nbsp;line_length&nbsp;is&nbsp;not&nbsp;valid.</tt></dd></dl>
+
+<dl><dt><a name="Draw-drawSierpinskiTriangle"><strong>drawSierpinskiTriangle</strong></a>(self, points, degree<font color="#909090">=7</font>)</dt><dd><tt>Use&nbsp;the&nbsp;turtle&nbsp;to&nbsp;draw&nbsp;a&nbsp;Sierpinski&nbsp;triangle.<br>
+&nbsp;<br>
+Start&nbsp;with&nbsp;a&nbsp;single&nbsp;large&nbsp;triangle.&nbsp;Divide&nbsp;the&nbsp;large&nbsp;triangle&nbsp;into&nbsp;four<br>
+new&nbsp;triangles&nbsp;by&nbsp;connecting&nbsp;the&nbsp;midpoint&nbsp;of&nbsp;each&nbsp;side.&nbsp;Ignoring&nbsp;the<br>
+middle&nbsp;triangle&nbsp;that&nbsp;you&nbsp;just&nbsp;created,&nbsp;apply&nbsp;the&nbsp;same&nbsp;procedure&nbsp;to&nbsp;each<br>
+of&nbsp;the&nbsp;three&nbsp;corner&nbsp;triangles.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;points&nbsp;(list&nbsp;of&nbsp;list&nbsp;of&nbsp;(int/float,&nbsp;int/float)):&nbsp;Three&nbsp;endpoints&nbsp;of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;first&nbsp;triangle.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;degree&nbsp;(int)&nbsp;[3]:&nbsp;How&nbsp;many&nbsp;times&nbsp;do&nbsp;you&nbsp;want&nbsp;to&nbsp;divide&nbsp;the&nbsp;triangle<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;into&nbsp;pieces</tt></dd></dl>
+
+<dl><dt><a name="Draw-drawSpiral"><strong>drawSpiral</strong></a>(self, line_length<font color="#909090">=200</font>)</dt><dd><tt>Use&nbsp;the&nbsp;turtle&nbsp;to&nbsp;draw&nbsp;a&nbsp;spiral&nbsp;recursively.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;line_length&nbsp;(int&nbsp;&gt;=0)&nbsp;[200]:&nbsp;Line&nbsp;length&nbsp;for&nbsp;the&nbsp;first&nbsp;stroke.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;if&nbsp;line_length&nbsp;is&nbsp;not&nbsp;valid.</tt></dd></dl>
+
+<dl><dt><a name="Draw-drawTriangle"><strong>drawTriangle</strong></a>(self, points)</dt><dd><tt>Use&nbsp;the&nbsp;turtle&nbsp;to&nbsp;draw&nbsp;a&nbsp;triangle.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;points&nbsp;(list&nbsp;of&nbsp;list&nbsp;of&nbsp;(int/float,&nbsp;int/float)):&nbsp;Three&nbsp;endpoints&nbsp;of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;triangle.</tt></dd></dl>
+
+<dl><dt><a name="Draw-show"><strong>show</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['Draw']<br>
+<strong>__author__</strong> = 'Hao Zhang'<br>
+<strong>__copyright__</strong> = 'Copyright @2017'<br>
+<strong>__date__</strong> = '2017-07-27'<br>
+<strong>__email__</strong> = 'zhangh0214@gmail.com'<br>
+<strong>__license__</strong> = 'CC BY-SA 3.0'<br>
+<strong>__status__</strong> = 'Development'<br>
+<strong>__updated__</strong> = '2017-07-27'<br>
+<strong>__version__</strong> = '1.0'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Hao&nbsp;Zhang</td></tr></table>
+</body></html>

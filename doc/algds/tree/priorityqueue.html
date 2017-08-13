@@ -1,0 +1,108 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module priorityqueue</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>priorityqueue</strong></big></big> (version 1.0, 2017-08-12)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/hao/study/computer-science/algorithms-and-data-structures/problem-solving-with-algorithms-and-data-structures-with-python/code/algds/algds/tree/priorityqueue.py">/home/hao/study/computer-science/algorithms-and-data-structures/problem-solving-with-algorithms-and-data-structures-with-python/code/algds/algds/tree/priorityqueue.py</a></font></td></tr></table>
+    <p><tt>Implementation&nbsp;of&nbsp;a&nbsp;priority&nbsp;queue.<br>
+&nbsp;<br>
+A&nbsp;priority&nbsp;queue&nbsp;acts&nbsp;like&nbsp;a&nbsp;queue&nbsp;in&nbsp;that&nbsp;you&nbsp;dequeue&nbsp;an&nbsp;item&nbsp;by&nbsp;removing&nbsp;it<br>
+from&nbsp;the&nbsp;front.&nbsp;However,&nbsp;in&nbsp;a&nbsp;priority&nbsp;queue&nbsp;the&nbsp;logical&nbsp;order&nbsp;of&nbsp;items&nbsp;inside<br>
+a&nbsp;queue&nbsp;is&nbsp;determined&nbsp;by&nbsp;their&nbsp;priority.&nbsp;The&nbsp;highest&nbsp;prioprity&nbsp;items&nbsp;are&nbsp;at&nbsp;the<br>
+front&nbsp;of&nbsp;the&nbsp;queue&nbsp;and&nbsp;the&nbsp;lowest&nbsp;priority&nbsp;items&nbsp;are&nbsp;at&nbsp;the&nbsp;back.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="priorityqueue.html#PriorityQueue">PriorityQueue</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="PriorityQueue">class <strong>PriorityQueue</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Implementation&nbsp;of&nbsp;a&nbsp;priority&nbsp;queue&nbsp;using&nbsp;a&nbsp;binary&nbsp;min&nbsp;heap.<br>
+&nbsp;<br>
+A&nbsp;binary&nbsp;heap&nbsp;will&nbsp;allow&nbsp;us&nbsp;both&nbsp;enqueue&nbsp;and&nbsp;dequeue&nbsp;items&nbsp;in&nbsp;O(lg&nbsp;n).<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;priority_queue&nbsp;=&nbsp;<a href="#PriorityQueue">PriorityQueue</a>()<br>
+&gt;&gt;&gt;&nbsp;priority_queue.<a href="#PriorityQueue-insert">insert</a>(5)<br>
+&gt;&gt;&gt;&nbsp;priority_queue.<a href="#PriorityQueue-insert">insert</a>(7)<br>
+&gt;&gt;&gt;&nbsp;priority_queue.<a href="#PriorityQueue-insert">insert</a>(3)<br>
+&gt;&gt;&gt;&nbsp;priority_queue.<a href="#PriorityQueue-insert">insert</a>(11)<br>
+&gt;&gt;&gt;&nbsp;print(priority_queue.<a href="#PriorityQueue-delMin">delMin</a>())<br>
+3<br>
+&gt;&gt;&gt;&nbsp;print(priority_queue.<a href="#PriorityQueue-delMin">delMin</a>())<br>
+5<br>
+&gt;&gt;&gt;&nbsp;print(priority_queue.<a href="#PriorityQueue-delMin">delMin</a>())<br>
+7<br>
+&gt;&gt;&gt;&nbsp;print(priority_queue.<a href="#PriorityQueue-delMin">delMin</a>())<br>
+11<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="PriorityQueue-__init__"><strong>__init__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="PriorityQueue-build"><strong>build</strong></a>(self, aList)</dt><dd><tt>Build&nbsp;an&nbsp;entire&nbsp;heap&nbsp;from&nbsp;a&nbsp;list&nbsp;of&nbsp;keys&nbsp;in&nbsp;O(n)&nbsp;time.</tt></dd></dl>
+
+<dl><dt><a name="PriorityQueue-delMin"><strong>delMin</strong></a>(self)</dt><dd><tt>Remove&nbsp;the&nbsp;smallest&nbsp;and&nbsp;heapfity&nbsp;the&nbsp;heap.<br>
+&nbsp;<br>
+First,&nbsp;we&nbsp;will&nbsp;restore&nbsp;the&nbsp;root&nbsp;item&nbsp;by&nbsp;taking&nbsp;the&nbsp;last&nbsp;item&nbsp;in&nbsp;the&nbsp;list<br>
+and&nbsp;moving&nbsp;it&nbsp;to&nbsp;the&nbsp;root&nbsp;position.&nbsp;Moving&nbsp;the&nbsp;last&nbsp;item&nbsp;maintains&nbsp;our<br>
+heap&nbsp;structure&nbsp;property.<br>
+&nbsp;<br>
+Second,&nbsp;we&nbsp;will&nbsp;restore&nbsp;the&nbsp;heap&nbsp;order&nbsp;property&nbsp;by&nbsp;pushing&nbsp;the&nbsp;new&nbsp;root<br>
+node&nbsp;down&nbsp;the&nbsp;tree&nbsp;to&nbsp;its&nbsp;proper&nbsp;position.&nbsp;In&nbsp;order&nbsp;to&nbsp;maintain&nbsp;the&nbsp;heap<br>
+order&nbsp;property,&nbsp;all&nbsp;we&nbsp;need&nbsp;to&nbsp;do&nbsp;is&nbsp;swap&nbsp;the&nbsp;root&nbsp;with&nbsp;its&nbsp;smallest<br>
+child&nbsp;less&nbsp;than&nbsp;the&nbsp;root.</tt></dd></dl>
+
+<dl><dt><a name="PriorityQueue-insert"><strong>insert</strong></a>(self, key)</dt><dd><tt>Add&nbsp;an&nbsp;item&nbsp;to&nbsp;the&nbsp;heap.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['PriorityQueue']<br>
+<strong>__author__</strong> = 'Hao Zhang'<br>
+<strong>__copyright__</strong> = 'Copyright @2017'<br>
+<strong>__date__</strong> = '2017-08-12'<br>
+<strong>__email__</strong> = 'zhangh0214@gmail.com'<br>
+<strong>__license__</strong> = 'CC BY-SA 3.0'<br>
+<strong>__status__</strong> = 'Development'<br>
+<strong>__updated__</strong> = '2017-08-12'<br>
+<strong>__version__</strong> = '1.0'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Hao&nbsp;Zhang</td></tr></table>
+</body></html>

@@ -1,0 +1,115 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module queue</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>queue</strong></big></big> (version 1.0, 2017-07-26)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/hao/study/computer-science/algorithms-and-data-structures/problem-solving-with-algorithms-and-data-structures/code/algds/algds/ds/queue.py">/home/hao/study/computer-science/algorithms-and-data-structures/problem-solving-with-algorithms-and-data-structures/code/algds/algds/ds/queue.py</a></font></td></tr></table>
+    <p><tt>Implementation&nbsp;of&nbsp;a&nbsp;queque.<br>
+&nbsp;<br>
+<a href="#Queue">Queue</a>&nbsp;is&nbsp;an&nbsp;ordered&nbsp;collection&nbsp;of&nbsp;items&nbsp;where&nbsp;the&nbsp;addition&nbsp;of&nbsp;new&nbsp;item&nbsp;happens<br>
+at&nbsp;one&nbsp;end&nbsp;called&nbsp;the&nbsp;rear,&nbsp;and&nbsp;the&nbsp;removal&nbsp;of&nbsp;existing&nbsp;items&nbsp;occurs&nbsp;at&nbsp;the<br>
+other&nbsp;end&nbsp;called&nbsp;the&nbsp;front.&nbsp;This&nbsp;ordering&nbsp;principle&nbsp;is&nbsp;called&nbsp;FIFO,&nbsp;first-in<br>
+first-out.<br>
+&nbsp;<br>
+Applications:&nbsp;When&nbsp;30&nbsp;computers&nbsp;networked&nbsp;with&nbsp;a&nbsp;single&nbsp;printer,&nbsp;the&nbsp;first&nbsp;task<br>
+in&nbsp;is&nbsp;the&nbsp;next&nbsp;to&nbsp;be&nbsp;completed.&nbsp;Operating&nbsp;systems&nbsp;use&nbsp;a&nbsp;number&nbsp;of&nbsp;different<br>
+queues&nbsp;to&nbsp;control&nbsp;processes&nbsp;within&nbsp;a&nbsp;computer.&nbsp;The&nbsp;scheduler&nbsp;tries&nbsp;to&nbsp;execute<br>
+programs&nbsp;as&nbsp;quickly&nbsp;as&nbsp;possible&nbsp;and&nbsp;serve&nbsp;as&nbsp;many&nbsp;users&nbsp;as&nbsp;it&nbsp;can.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="queue.html#Queue">Queue</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Queue">class <strong>Queue</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Implementation&nbsp;of&nbsp;a&nbsp;queque.<br>
+&nbsp;<br>
+We&nbsp;will&nbsp;use&nbsp;list&nbsp;to&nbsp;build&nbsp;the&nbsp;internal&nbsp;representation&nbsp;of&nbsp;the&nbsp;queue.&nbsp;Assume<br>
+that&nbsp;the&nbsp;rear&nbsp;is&nbsp;at&nbsp;position&nbsp;0&nbsp;in&nbsp;the&nbsp;list,&nbsp;and&nbsp;the&nbsp;last&nbsp;element&nbsp;is&nbsp;the<br>
+front.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_items&nbsp;(list):<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;q&nbsp;=&nbsp;<a href="#Queue">Queue</a>()<br>
+&gt;&gt;&gt;&nbsp;q.<a href="#Queue-isEmpty">isEmpty</a>()<br>
+True<br>
+&gt;&gt;&gt;&nbsp;q.<a href="#Queue-enqueue">enqueue</a>(4)<br>
+&gt;&gt;&gt;&nbsp;q.<a href="#Queue-enqueue">enqueue</a>('dog')<br>
+&gt;&gt;&gt;&nbsp;q.<a href="#Queue-enqueue">enqueue</a>(True)<br>
+&gt;&gt;&gt;&nbsp;q.<a href="#Queue-size">size</a>()<br>
+3<br>
+&gt;&gt;&gt;&nbsp;q.<a href="#Queue-isEmpty">isEmpty</a>()<br>
+False<br>
+&gt;&gt;&gt;&nbsp;q.<a href="#Queue-enqueue">enqueue</a>(8.4)<br>
+&gt;&gt;&gt;&nbsp;q.<a href="#Queue-dequeue">dequeue</a>()<br>
+4<br>
+&gt;&gt;&gt;&nbsp;q.<a href="#Queue-dequeue">dequeue</a>()<br>
+'dog'<br>
+&gt;&gt;&gt;&nbsp;q.<a href="#Queue-size">size</a>()<br>
+2<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Queue-__init__"><strong>__init__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Queue-dequeue"><strong>dequeue</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Queue-enqueue"><strong>enqueue</strong></a>(self, x)</dt></dl>
+
+<dl><dt><a name="Queue-isEmpty"><strong>isEmpty</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Queue-size"><strong>size</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['Queue']<br>
+<strong>__author__</strong> = 'Hao Zhang'<br>
+<strong>__copyright__</strong> = 'Copyright @2017'<br>
+<strong>__date__</strong> = '2017-07-26'<br>
+<strong>__email__</strong> = 'zhangh0214@gmail.com'<br>
+<strong>__license__</strong> = 'CC BY-SA 3.0'<br>
+<strong>__status__</strong> = 'Development'<br>
+<strong>__updated__</strong> = '2017-07-25'<br>
+<strong>__version__</strong> = '1.0'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Hao&nbsp;Zhang</td></tr></table>
+</body></html>

@@ -1,0 +1,181 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module sort</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>sort</strong></big></big> (version 1.0, 2017-07-28)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/hao/study/computer-science/algorithms-and-data-structures/problem-solving-with-algorithms-and-data-structures/code/algds/algds/sort/sort.py">/home/hao/study/computer-science/algorithms-and-data-structures/problem-solving-with-algorithms-and-data-structures/code/algds/algds/sort/sort.py</a></font></td></tr></table>
+    <p><tt>Sorting.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-bubbleSort"><strong>bubbleSort</strong></a>(A)</dt><dd><tt>The&nbsp;bubble&nbsp;sort&nbsp;compares&nbsp;adjacent&nbsp;items&nbsp;and&nbsp;exchanges&nbsp;those&nbsp;that&nbsp;are&nbsp;out<br>
+of&nbsp;order.<br>
+&nbsp;<br>
+Each&nbsp;pass&nbsp;through&nbsp;the&nbsp;list&nbsp;places&nbsp;the&nbsp;next&nbsp;largest&nbsp;value&nbsp;in&nbsp;its&nbsp;proper<br>
+place.&nbsp;In&nbsp;essence,&nbsp;each&nbsp;item&nbsp;"bubbles"&nbsp;up&nbsp;to&nbsp;the&nbsp;location&nbsp;where&nbsp;it&nbsp;belongs.<br>
+&nbsp;<br>
+The&nbsp;bubble&nbsp;sort&nbsp;is&nbsp;often&nbsp;considered&nbsp;the&nbsp;most&nbsp;inefficient&nbsp;sorting&nbsp;method<br>
+since&nbsp;it&nbsp;must&nbsp;exchange&nbsp;items&nbsp;before&nbsp;the&nbsp;final&nbsp;location&nbsp;is&nbsp;known.&nbsp;These<br>
+"wasted"&nbsp;exchange&nbsp;operations&nbsp;are&nbsp;very&nbsp;costly.<br>
+&nbsp;<br>
+On&nbsp;the&nbsp;other&nbsp;hand,&nbsp;if&nbsp;during&nbsp;a&nbsp;pass&nbsp;there&nbsp;are&nbsp;no&nbsp;exchanges,&nbsp;then&nbsp;we&nbsp;know<br>
+that&nbsp;the&nbsp;list&nbsp;must&nbsp;be&nbsp;sorted.&nbsp;A&nbsp;bubble&nbsp;sort&nbsp;can&nbsp;be&nbsp;modified&nbsp;to&nbsp;stop&nbsp;early<br>
+if&nbsp;it&nbsp;finds&nbsp;the&nbsp;list&nbsp;has&nbsp;become&nbsp;sorted.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-bubbleSort">bubbleSort</a>([])<br>
+[]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-bubbleSort">bubbleSort</a>([1])<br>
+[1]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-bubbleSort">bubbleSort</a>([1,&nbsp;2])<br>
+[1,&nbsp;2]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-bubbleSort">bubbleSort</a>([2,&nbsp;1])<br>
+[1,&nbsp;2]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-bubbleSort">bubbleSort</a>([2,&nbsp;1,&nbsp;3])<br>
+[1,&nbsp;2,&nbsp;3]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-bubbleSort">bubbleSort</a>([54,&nbsp;26,&nbsp;93,&nbsp;17,&nbsp;77,&nbsp;31,&nbsp;44,&nbsp;55,&nbsp;20])<br>
+[17,&nbsp;20,&nbsp;26,&nbsp;31,&nbsp;44,&nbsp;54,&nbsp;55,&nbsp;77,&nbsp;93]</tt></dd></dl>
+ <dl><dt><a name="-insertionSort"><strong>insertionSort</strong></a>(A)</dt><dd><tt>Insertion&nbsp;sort&nbsp;always&nbsp;maintains&nbsp;a&nbsp;sorted&nbsp;sublist&nbsp;in&nbsp;the&nbsp;lower&nbsp;positions<br>
+of&nbsp;the&nbsp;list.<br>
+&nbsp;<br>
+Each&nbsp;new&nbsp;element&nbsp;is&nbsp;then&nbsp;"inserted"&nbsp;back&nbsp;into&nbsp;the&nbsp;previous&nbsp;sublist&nbsp;such&nbsp;that<br>
+the&nbsp;sorted&nbsp;sublist&nbsp;is&nbsp;one&nbsp;item&nbsp;larger.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-insertionSort">insertionSort</a>([])<br>
+[]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-insertionSort">insertionSort</a>([1])<br>
+[1]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-insertionSort">insertionSort</a>([1,&nbsp;2])<br>
+[1,&nbsp;2]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-insertionSort">insertionSort</a>([2,&nbsp;1])<br>
+[1,&nbsp;2]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-insertionSort">insertionSort</a>([2,&nbsp;1,&nbsp;3])<br>
+[1,&nbsp;2,&nbsp;3]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-insertionSort">insertionSort</a>([54,&nbsp;26,&nbsp;93,&nbsp;17,&nbsp;77,&nbsp;31,&nbsp;44,&nbsp;55,&nbsp;20])<br>
+[17,&nbsp;20,&nbsp;26,&nbsp;31,&nbsp;44,&nbsp;54,&nbsp;55,&nbsp;77,&nbsp;93]</tt></dd></dl>
+ <dl><dt><a name="-mergeSort"><strong>mergeSort</strong></a>(A)</dt><dd><tt>Mergesort&nbsp;uses&nbsp;a&nbsp;divide&nbsp;and&nbsp;conquer&nbsp;strategy&nbsp;to&nbsp;improve&nbsp;the&nbsp;performance.<br>
+&nbsp;<br>
+Merge&nbsp;sort&nbsp;is&nbsp;a&nbsp;recursive&nbsp;algorithm&nbsp;that&nbsp;continually&nbsp;splits&nbsp;a&nbsp;list&nbsp;in&nbsp;half,<br>
+and&nbsp;recursive&nbsp;invoke&nbsp;a&nbsp;merge&nbsp;sort&nbsp;on&nbsp;both&nbsp;halves.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-mergeSort">mergeSort</a>([])<br>
+[]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-mergeSort">mergeSort</a>([1])<br>
+[1]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-mergeSort">mergeSort</a>([1,&nbsp;2])<br>
+[1,&nbsp;2]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-mergeSort">mergeSort</a>([2,&nbsp;1])<br>
+[1,&nbsp;2]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-mergeSort">mergeSort</a>([2,&nbsp;1,&nbsp;3])<br>
+[1,&nbsp;2,&nbsp;3]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-mergeSort">mergeSort</a>([54,&nbsp;26,&nbsp;93,&nbsp;17,&nbsp;77,&nbsp;31,&nbsp;44,&nbsp;55,&nbsp;20])<br>
+[17,&nbsp;20,&nbsp;26,&nbsp;31,&nbsp;44,&nbsp;54,&nbsp;55,&nbsp;77,&nbsp;93]</tt></dd></dl>
+ <dl><dt><a name="-quickSort"><strong>quickSort</strong></a>(A)</dt><dd><tt>The&nbsp;quick&nbsp;sort&nbsp;uses&nbsp;divide&nbsp;and&nbsp;conquer&nbsp;to&nbsp;gain&nbsp;the&nbsp;same&nbsp;advantages&nbsp;as&nbsp;the<br>
+merge&nbsp;sort,&nbsp;while&nbsp;not&nbsp;using&nbsp;additional&nbsp;storage.<br>
+&nbsp;<br>
+As&nbsp;a&nbsp;trade-off,&nbsp;however,&nbsp;it&nbsp;is&nbsp;possible&nbsp;that&nbsp;the&nbsp;list&nbsp;may&nbsp;not&nbsp;be&nbsp;divided&nbsp;in<br>
+half.&nbsp;We&nbsp;use&nbsp;the&nbsp;first&nbsp;item&nbsp;in&nbsp;the&nbsp;list&nbsp;to&nbsp;be&nbsp;the&nbsp;pivot.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-quickSort">quickSort</a>([])<br>
+[]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-quickSort">quickSort</a>([1])<br>
+[1]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-quickSort">quickSort</a>([1,&nbsp;2])<br>
+[1,&nbsp;2]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-quickSort">quickSort</a>([2,&nbsp;1])<br>
+[1,&nbsp;2]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-quickSort">quickSort</a>([2,&nbsp;1,&nbsp;3])<br>
+[1,&nbsp;2,&nbsp;3]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-quickSort">quickSort</a>([54,&nbsp;26,&nbsp;93,&nbsp;17,&nbsp;77,&nbsp;31,&nbsp;44,&nbsp;55,&nbsp;20])<br>
+[17,&nbsp;20,&nbsp;26,&nbsp;31,&nbsp;44,&nbsp;54,&nbsp;55,&nbsp;77,&nbsp;93]</tt></dd></dl>
+ <dl><dt><a name="-selectionSort"><strong>selectionSort</strong></a>(A)</dt><dd><tt>The&nbsp;selection&nbsp;sort&nbsp;improves&nbsp;on&nbsp;the&nbsp;bubble&nbsp;sort&nbsp;by&nbsp;making&nbsp;only&nbsp;one<br>
+exchange&nbsp;for&nbsp;every&nbsp;pass&nbsp;through&nbsp;the&nbsp;list.<br>
+&nbsp;<br>
+In&nbsp;order&nbsp;to&nbsp;do&nbsp;this,&nbsp;a&nbsp;selection&nbsp;sort&nbsp;looks&nbsp;for&nbsp;the&nbsp;largest&nbsp;value&nbsp;as&nbsp;it<br>
+makes&nbsp;a&nbsp;pass&nbsp;and,&nbsp;after&nbsp;completing&nbsp;the&nbsp;pass,&nbsp;places&nbsp;it&nbsp;in&nbsp;the&nbsp;proper<br>
+location.&nbsp;As&nbsp;with&nbsp;a&nbsp;bubble&nbsp;sort,&nbsp;after&nbsp;the&nbsp;first&nbsp;pass,&nbsp;the&nbsp;largest&nbsp;item<br>
+is&nbsp;in&nbsp;the&nbsp;correct&nbsp;place.&nbsp;This&nbsp;process&nbsp;continues&nbsp;and&nbsp;requires&nbsp;n-1&nbsp;passes<br>
+to&nbsp;sort&nbsp;n&nbsp;items,&nbsp;since&nbsp;the&nbsp;final&nbsp;item&nbsp;must&nbsp;be&nbsp;in&nbsp;place&nbsp;after&nbsp;the&nbsp;(n-1)-th<br>
+pass.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-selectionSort">selectionSort</a>([])<br>
+[]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-selectionSort">selectionSort</a>([1])<br>
+[1]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-selectionSort">selectionSort</a>([1,&nbsp;2])<br>
+[1,&nbsp;2]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-selectionSort">selectionSort</a>([2,&nbsp;1])<br>
+[1,&nbsp;2]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-selectionSort">selectionSort</a>([2,&nbsp;1,&nbsp;3])<br>
+[1,&nbsp;2,&nbsp;3]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-selectionSort">selectionSort</a>([54,&nbsp;26,&nbsp;93,&nbsp;17,&nbsp;77,&nbsp;31,&nbsp;44,&nbsp;55,&nbsp;20])<br>
+[17,&nbsp;20,&nbsp;26,&nbsp;31,&nbsp;44,&nbsp;54,&nbsp;55,&nbsp;77,&nbsp;93]</tt></dd></dl>
+ <dl><dt><a name="-shellSort"><strong>shellSort</strong></a>(A)</dt><dd><tt>Perform&nbsp;shell&nbsp;sort&nbsp;on&nbsp;list&nbsp;A.<br>
+&nbsp;<br>
+The&nbsp;shell&nbsp;sort,&nbsp;sometimes&nbsp;called&nbsp;the&nbsp;diminishing&nbsp;increment&nbsp;sort,&nbsp;improves<br>
+on&nbsp;the&nbsp;insertion&nbsp;sort&nbsp;by&nbsp;breaking&nbsp;the&nbsp;original&nbsp;list&nbsp;into&nbsp;a&nbsp;number&nbsp;of&nbsp;smaller<br>
+sublists,&nbsp;each&nbsp;of&nbsp;which&nbsp;is&nbsp;sorted&nbsp;using&nbsp;an&nbsp;insertion&nbsp;sort.<br>
+&nbsp;<br>
+The&nbsp;unique&nbsp;way&nbsp;that&nbsp;these&nbsp;sublists&nbsp;are&nbsp;chosen&nbsp;is&nbsp;the&nbsp;key&nbsp;to&nbsp;the&nbsp;shell&nbsp;sort.<br>
+Instead&nbsp;of&nbsp;breaking&nbsp;the&nbsp;list&nbsp;into&nbsp;sublists&nbsp;of&nbsp;contiguous&nbsp;items,&nbsp;the&nbsp;shell<br>
+sort&nbsp;uses&nbsp;an&nbsp;increment&nbsp;i,&nbsp;sometimes&nbsp;called&nbsp;the&nbsp;gap,&nbsp;to&nbsp;create&nbsp;a&nbsp;sublist<br>
+by&nbsp;chosing&nbsp;all&nbsp;items&nbsp;that&nbsp;are&nbsp;i&nbsp;items&nbsp;apart.<br>
+&nbsp;<br>
+By&nbsp;sorting&nbsp;the&nbsp;sublists,&nbsp;although&nbsp;the&nbsp;whole&nbsp;list&nbsp;is&nbsp;not&nbsp;completely&nbsp;sorted,<br>
+the&nbsp;elements&nbsp;are&nbsp;closer&nbsp;to&nbsp;where&nbsp;they&nbsp;actually&nbsp;belong.&nbsp;We&nbsp;perform&nbsp;a&nbsp;final<br>
+insertion&nbsp;sort&nbsp;by&nbsp;using&nbsp;an&nbsp;increment&nbsp;of&nbsp;one,&nbsp;i.e.,&nbsp;the&nbsp;standard&nbsp;insertion<br>
+sort.&nbsp;Note&nbsp;that&nbsp;by&nbsp;performing&nbsp;the&nbsp;earlier&nbsp;sublist&nbsp;sorts,&nbsp;we&nbsp;have&nbsp;now&nbsp;reduced<br>
+the&nbsp;total&nbsp;number&nbsp;of&nbsp;shifting&nbsp;operations&nbsp;necessary&nbsp;to&nbsp;put&nbsp;the&nbsp;list&nbsp;in&nbsp;its<br>
+final&nbsp;order.<br>
+&nbsp;<br>
+Since&nbsp;each&nbsp;pass&nbsp;produces&nbsp;a&nbsp;list&nbsp;that&nbsp;is&nbsp;"more&nbsp;sorted"&nbsp;than&nbsp;the&nbsp;previous<br>
+one,&nbsp;the&nbsp;final&nbsp;insertion&nbsp;sort&nbsp;does&nbsp;not&nbsp;need&nbsp;to&nbsp;do&nbsp;very&nbsp;many&nbsp;comparisons.<br>
+The&nbsp;running&nbsp;time&nbsp;of&nbsp;a&nbsp;shell&nbsp;sort&nbsp;is&nbsp;between&nbsp;O(n)&nbsp;and&nbsp;O(n^2).&nbsp;By&nbsp;changing&nbsp;the<br>
+increment,&nbsp;for&nbsp;exmample&nbsp;using&nbsp;2^k-1&nbsp;(1,&nbsp;3,&nbsp;7,&nbsp;15,&nbsp;31,&nbsp;...),&nbsp;a&nbsp;shell&nbsp;sort<br>
+can&nbsp;perform&nbsp;at&nbsp;O(n^(3/2)).<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-shellSort">shellSort</a>([])<br>
+[]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-shellSort">shellSort</a>([1])<br>
+[1]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-shellSort">shellSort</a>([1,&nbsp;2])<br>
+[1,&nbsp;2]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-shellSort">shellSort</a>([2,&nbsp;1])<br>
+[1,&nbsp;2]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-shellSort">shellSort</a>([2,&nbsp;1,&nbsp;3])<br>
+[1,&nbsp;2,&nbsp;3]<br>
+&gt;&gt;&gt;&nbsp;<a href="#-shellSort">shellSort</a>([54,&nbsp;26,&nbsp;93,&nbsp;17,&nbsp;77,&nbsp;31,&nbsp;44,&nbsp;55,&nbsp;20])<br>
+[17,&nbsp;20,&nbsp;26,&nbsp;31,&nbsp;44,&nbsp;54,&nbsp;55,&nbsp;77,&nbsp;93]</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['bubbleSort', 'selectionSort', 'insertionSort', 'shellSort', 'mergeSort', 'quickSort']<br>
+<strong>__author__</strong> = 'Hao Zhang'<br>
+<strong>__copyright__</strong> = 'Copyright @2017 LAMDA'<br>
+<strong>__date__</strong> = '2017-07-28'<br>
+<strong>__email__</strong> = 'zhangh0214@gmail.com'<br>
+<strong>__license__</strong> = 'CC BY-SA 3.0'<br>
+<strong>__status__</strong> = 'Development'<br>
+<strong>__updated__</strong> = '2017-07-28'<br>
+<strong>__version__</strong> = '1.0'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Hao&nbsp;Zhang</td></tr></table>
+</body></html>

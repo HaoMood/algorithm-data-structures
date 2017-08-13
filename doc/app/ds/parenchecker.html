@@ -1,0 +1,118 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module parenchecker</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>parenchecker</strong></big></big> (version 1.0, 2017-07-25)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/hao/study/computer-science/algorithms-and-data-structures/problem-solving-with-algorithms-and-data-structures/code/algds/app/ds/parenchecker.py">/home/hao/study/computer-science/algorithms-and-data-structures/problem-solving-with-algorithms-and-data-structures/code/algds/app/ds/parenchecker.py</a></font></td></tr></table>
+    <p><tt>Balanced&nbsp;parentheses&nbsp;checker.<br>
+&nbsp;<br>
+Balanced&nbsp;parentheses&nbsp;means&nbsp;that&nbsp;each&nbsp;opening&nbsp;symbol&nbsp;has&nbsp;a&nbsp;corresponding&nbsp;closing<br>
+symbol&nbsp;and&nbsp;the&nbsp;pairs&nbsp;of&nbsp;parentheses&nbsp;are&nbsp;properly&nbsp;nested.&nbsp;For&nbsp;example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(()()()),&nbsp;(((()))),&nbsp;(()((())()))<br>
+&nbsp;<br>
+The&nbsp;ability&nbsp;to&nbsp;differentiate&nbsp;between&nbsp;parentheses&nbsp;that&nbsp;are&nbsp;correctly&nbsp;balanced<br>
+and&nbsp;those&nbsp;are&nbsp;unbalanced&nbsp;is&nbsp;an&nbsp;import&nbsp;part&nbsp;of&nbsp;recognizing&nbsp;many&nbsp;programming<br>
+language&nbsp;structures.<br>
+&nbsp;<br>
+Applications:&nbsp;Parentheses&nbsp;are&nbsp;used&nbsp;in&nbsp;arithmetic&nbsp;expressions&nbsp;to&nbsp;order&nbsp;the<br>
+performance&nbsp;of&nbsp;operations.&nbsp;Lots&nbsp;and&nbsp;lots&nbsp;of&nbsp;parentheses&nbsp;are&nbsp;used&nbsp;in&nbsp;Lisp&nbsp;syntax.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="parenchecker.html#ParenChecker">ParenChecker</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ParenChecker">class <strong>ParenChecker</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Read&nbsp;a&nbsp;string&nbsp;of&nbsp;parentheses&nbsp;decide&nbsp;whether&nbsp;they&nbsp;symbols&nbsp;are&nbsp;balanced.<br>
+&nbsp;<br>
+Observation:&nbsp;the&nbsp;most&nbsp;recent&nbsp;opening&nbsp;parenthesis&nbsp;must&nbsp;match&nbsp;the&nbsp;next&nbsp;closing<br>
+symbol.&nbsp;Also,&nbsp;the&nbsp;first&nbsp;opening&nbsp;symbol&nbsp;processed&nbsp;may&nbsp;have&nbsp;to&nbsp;wait&nbsp;until&nbsp;the<br>
+very&nbsp;last&nbsp;symbol&nbsp;for&nbsp;its&nbsp;match.&nbsp;Closing&nbsp;symbols&nbsp;match&nbsp;opening&nbsp;symbols&nbsp;in&nbsp;the<br>
+reverse&nbsp;order&nbsp;of&nbsp;their&nbsp;appearance;&nbsp;they&nbsp;match&nbsp;from&nbsp;the&nbsp;inside&nbsp;out.&nbsp;This&nbsp;is<br>
+a&nbsp;clue&nbsp;that&nbsp;stacks&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;solve&nbsp;the&nbsp;problem.<br>
+&nbsp;<br>
+Starting&nbsp;with&nbsp;an&nbsp;empty&nbsp;stack,&nbsp;process&nbsp;the&nbsp;parenthesis&nbsp;strings&nbsp;from&nbsp;left&nbsp;to<br>
+right.&nbsp;If&nbsp;a&nbsp;symbol&nbsp;is&nbsp;an&nbsp;opening&nbsp;parenthesis,&nbsp;push&nbsp;it&nbsp;on&nbsp;the&nbsp;stack&nbsp;as&nbsp;a<br>
+signal&nbsp;that&nbsp;a&nbsp;corresponding&nbsp;closing&nbsp;symbol&nbsp;needs&nbsp;to&nbsp;appear&nbsp;later.&nbsp;If,&nbsp;on&nbsp;the<br>
+other&nbsp;hand,&nbsp;a&nbsp;symbol&nbsp;is&nbsp;a&nbsp;closing&nbsp;parenthesis,&nbsp;pop&nbsp;the&nbsp;stack.&nbsp;As&nbsp;long&nbsp;as&nbsp;it<br>
+is&nbsp;possible&nbsp;to&nbsp;pop&nbsp;the&nbsp;stack&nbsp;to&nbsp;match&nbsp;every&nbsp;closing&nbsp;symbol,&nbsp;the&nbsp;parentheses<br>
+remain&nbsp;balanced.&nbsp;At&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;string,&nbsp;the&nbsp;stack&nbsp;should&nbsp;be&nbsp;empty.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;checker&nbsp;=&nbsp;<a href="#ParenChecker">ParenChecker</a>()<br>
+&gt;&gt;&gt;&nbsp;checker.<a href="#ParenChecker-isBalance">isBalance</a>('((()))')<br>
+True<br>
+&gt;&gt;&gt;&nbsp;checker.<a href="#ParenChecker-isBalance">isBalance</a>('(()')<br>
+False<br>
+&gt;&gt;&gt;&nbsp;checker.<a href="#ParenChecker-isBalance">isBalance</a>('')<br>
+True<br>
+&gt;&gt;&gt;&nbsp;checker.<a href="#ParenChecker-isBalance">isBalance</a>('(')<br>
+False<br>
+&gt;&gt;&gt;&nbsp;checker.<a href="#ParenChecker-isBalance">isBalance</a>(')')<br>
+False<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="ParenChecker-__init__"><strong>__init__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ParenChecker-isBalance"><strong>isBalance</strong></a>(self, symbol_string)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['ParenChecker']<br>
+<strong>__author__</strong> = 'Hao Zhang'<br>
+<strong>__copyright__</strong> = 'Copyright @2017'<br>
+<strong>__date__</strong> = '2017-07-25'<br>
+<strong>__email__</strong> = 'zhangh0214@gmail.com'<br>
+<strong>__license__</strong> = 'CC BY-SA 3.0'<br>
+<strong>__status__</strong> = 'Development'<br>
+<strong>__updated__</strong> = '2017-07-25'<br>
+<strong>__version__</strong> = '1.0'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Hao&nbsp;Zhang</td></tr></table>
+</body></html>
